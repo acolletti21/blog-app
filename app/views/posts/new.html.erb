@@ -1,5 +1,9 @@
-<h1>Create New Post</h1>
-  
+<h1>Create A New Post</h1>
+
+<% @post.errors.full_messages.each do |error| %> 
+  <h2><%= error%></h2>
+<%end%>
+
   <%= form_tag '/posts', method: :post do %>
     <div>
       <%= label_tag :title %>
@@ -10,6 +14,7 @@
       <%= label_tag :content %>
       <%= text_area_tag :content, @post.content %>
     </div>
+    <%= hidden_field_tag :user_id, @current_user.id %>
 
-    <%= submit_tag "Submit" %>
+    <%= submit_tag "Submit", class: "btn btn-default" %>
   <% end %>

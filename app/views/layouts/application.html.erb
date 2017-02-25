@@ -35,8 +35,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By Category<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <% Category.all.each do |category| %>
-                  <li><a href="/posts?category=<%= category.name %>"><%= category.name %> Posts</a></li>
-                  <li><a href="#">Action</a></li>
+                  <li><a href="/posts?category=<%= category.name %>"><%= category.name %> </a></li>
+                  
                 <% end %>
               </ul>
             </li>
@@ -73,12 +73,12 @@
     </nav>
 
     <div class="container-fluid">
-    <% flash.each do |name, message| %>
-      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p><%= message %></p>
-      </div>
-      <% end %>
-    <%= yield %>
+      <% flash.each do |name, message| %>
+        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p><%= message %></p>
+        </div>
+        <% end %>
+      <%= yield %>
     </div>
 
   </body>
