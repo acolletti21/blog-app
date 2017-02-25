@@ -14,9 +14,12 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(
+      )
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def edit

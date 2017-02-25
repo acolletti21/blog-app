@@ -1,7 +1,15 @@
-<h1>Categorize Post</h1>
-<%= form_tag "/post_categories", method: :post do %>
-  <div>
-    <%= label_tag :category %>
-    <%= collection_select :category, :category_id, Category.all, :id, :name, selected: @post.category_id %>
-  </div>
-<% submit_tag %>
+<h1>Create New Post</h1>
+  
+  <%= form_tag '/posts', method: :post do %>
+    <div>
+      <%= label_tag :title %>
+      <%= text_field_tag :title, @post.title %>
+    </div>
+    
+    <div>
+      <%= label_tag :content %>
+      <%= text_area_tag :content, @post.content %>
+    </div>
+
+    <%= submit_tag "Submit" %>
+  <% end %>
