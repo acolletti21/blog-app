@@ -1,0 +1,7 @@
+<h1>Categorize Post</h1>
+<%= form_tag "/post_categories", method: :post do %>
+  <div>
+    <%= label_tag :category %>
+    <%= collection_select :category, :category_id, Category.all, :id, :name, selected: @post.category_id %>
+  </div>
+<% submit_tag %>

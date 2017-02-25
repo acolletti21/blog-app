@@ -1,0 +1,9 @@
+<h1>Create A New Category</h1>
+<p><i>Examples: DIY, Sports, Funny</i></p>
+<%= form_tag '/categories', method: :post do  %>
+  <div>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+  </div>
+  <%= submit_tag "Create" %>
+<% end %>
