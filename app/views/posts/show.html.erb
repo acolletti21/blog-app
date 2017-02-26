@@ -5,17 +5,17 @@
   
   <span>categories: 
     <% @post.categories.each do |category| %>
-      <%= category.name %>
+      <%= category.name + "," %>
     <% end %>
   </span>
   
 </div>
 
 
-  <% if current_user && @post.user %>
-    <%= link_to "Add Categories", "/posts/#{@post.id}/post_categories/new", class: "btn btn-warning" %>
+
     
-    <% if current_user.id == @post.user.id%>
+    <% if current_user.id == @post.user.id %>
+    <%= link_to "Add Categories", "/posts/#{@post.id}/post_categories/new", class: "btn btn-warning" %>
     <%= link_to "Edit Post", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
       <div>
         <%= form_tag "/posts/#{@post.id}", method: :delete do %>
@@ -24,5 +24,5 @@
       </div>
     <% end %>
 
-  <% end %>
+
 </div>

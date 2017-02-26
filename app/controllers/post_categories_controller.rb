@@ -6,7 +6,7 @@ class PostCategoriesController < ApplicationController
 
   def create
     @post = Post.find(params[:id])
-    @category = Category.find(params[:id]) 
+    # @category = Category.find(params[:id]) 
     @post_category = PostCategory.new(
                               post_id: params[:post_id],
                               category_id: params[:category_id][:id]
