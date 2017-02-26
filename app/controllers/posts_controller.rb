@@ -58,5 +58,6 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:warning] = "Post Deleted"
     redirect_to = "/posts"
+    #figure out why this is deleting but not redirecting
   end
 end
