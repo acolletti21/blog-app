@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :posts
-  has_many :post_categories
   has_many :categories
+  has_many :post_categories
 
   validates :email, presence: true
   validates :email, uniqueness: true

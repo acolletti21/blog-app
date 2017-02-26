@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    ##having a problem where it gets an error "user must exist" I don't know why my associations aren't working here so that post knows what user is creating it
+    ##having a problem where it gets an error "user must exist" I don't know why my associations aren't working ##nevermind- this happened because one of my test posts didn't have a user associated & broke the whole page
     @post = Post.new(
                     title: params[:title],
                     content: params[:content],

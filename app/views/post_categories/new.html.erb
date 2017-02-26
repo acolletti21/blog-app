@@ -1,13 +1,18 @@
 <h1>Categorize Post</h1>
   
-  <%= form_tag "/post_categories/#{@post.id}", method: :post do %>
+<% @post_category.errors.full_messages.each do |error| %> 
+  <h2><%= error%></h2>
+<%end%>
+
+
+  <%= form_tag "/posts/#{@post.id}/post_categories", method: :post do %>
     
     <div>
       <%= label_tag :category %>
-      <%= collection_select :category, :category_id, Category.all, :id, :name, selected: @post.category_id %>
+      <%= collection_select :category_id, :id, Category.all, :id, :name  %>
       <%= hidden_field_tag :post_id, @post.id %>
     </div>
 
-  <% submit_tag "Add"%>
+  <%= submit_tag "Add"%>
 
   <% end %>

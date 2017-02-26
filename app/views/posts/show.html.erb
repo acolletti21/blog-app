@@ -14,7 +14,7 @@
 
   <% if current_user && @post.user %>
     <%= link_to "Edit Post", "/posts/#{@post.id}/edit", class: "btn btn-success" %>
-    <%= link_to "Add Categories", "#", class: "btn btn-warning" %>
+    <%= link_to "Add Categories", "/posts/#{@post.id}/post_categories/new", class: "btn btn-warning" %>
     <div>
       <%= form_tag "/posts/#{@post.id}", method: :delete do %>
           <input class="btn btn-danger" type="submit" value="Remove Post">

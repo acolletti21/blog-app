@@ -29,4 +29,7 @@ Rails.application.routes.draw do
 
   get '/categories/:id' => 'categories#show'
 
+
+  get '/posts/:id/post_categories/new' => 'post_categories#new'
+  post '/posts/:id/post_categories' => 'post_categories#create'
 end
