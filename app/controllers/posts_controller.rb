@@ -3,10 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    category_type = params[:category]
     category = params[:category]
 
-    if category
-      category = Category.find_by(name: category)
+    if category_type
+      category = Category.find_by(name: category_type)
       @posts = category.posts
     end
   end
