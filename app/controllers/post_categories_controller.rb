@@ -17,5 +17,6 @@ class PostCategoriesController < ApplicationController
     else
       render :new
     end
+    #need to add logic to only add a post category once so it doesn't show up mutlipt times when sorted by category
   end
 end
